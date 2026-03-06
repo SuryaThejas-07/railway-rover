@@ -9,6 +9,7 @@ import {
 export interface Booking {
   id: string;
   userId: string;
+  trainId: string;
   trainNumber: string;
   trainName?: string;
   passengerName: string;
@@ -16,7 +17,7 @@ export interface Booking {
   gender: string;
   coach: string;
   seatNumber: number;
-  travelDate: string;
+  travelDate: string; // ISO format: YYYY-MM-DD
   PNR: string;
   bookingStatus: string;
   createdAt: any;
@@ -44,14 +45,23 @@ export const createBooking = async (
   passengerName: string,
   age: number,
   gender: string,
-  travelDate: string,
+  travelDate: string, // ISO format: YYYY-MM-DD
   amount: number
 ) => {
   const { coach, seatNumber } = generateSeat();
   const PNR = generatePNR();
 
+  // Validate and update schedule
+  const schedules = await getCollection("trainSchedules") as any[];
+  const schedule = schedules.find(s => s.trainId === trainId && s.date === travelDate);
+  
+  if (!schedule || schedule.seatsAvailable <= 0) {
+    throw new Error("No seats available for this date");
+  }
+
   const bookingDoc = await addDocument("bookings", {
     userId,
+    trainId,
     trainNumber,
     trainName,
     passengerName,
@@ -62,6 +72,7 @@ export const createBooking = async (
     travelDate,
     PNR,
     bookingStatus: "confirmed",
+    createdAt: new Date().toISOString(),
   });
 
   await addDocument("payments", {
@@ -74,6 +85,12 @@ export const createBooking = async (
     paymentDate: new Date().toISOString(),
   });
 
+  // Update seats in schedule
+  await updateDocument("trainSchedules", schedule.id, {
+    seatsAvailable: schedule.seatsAvailable - 1,
+  });
+
+  // Also update the train's seatsAvailable for backward compatibility
   await incrementField("trains", trainId, "seatsAvailable", -1);
 
   return { bookingId: bookingDoc.id, PNR, coach, seatNumber };

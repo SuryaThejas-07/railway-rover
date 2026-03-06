@@ -31,7 +31,7 @@ const ProtectedRoute = ({ children, adminOnly = false }: { children: React.React
 };
 
 const AppRoutes = () => (
-  <div className="flex min-h-screen flex-col">
+  <div className="flex min-h-screen flex-col bg-background text-foreground">
     <Navbar />
     <main className="flex-1">
       <Routes>
