@@ -397,7 +397,51 @@ Customized in `tailwind.config.ts` with:
 
 ---
 
-## 📸 Demo & Screenshots
+## Application Flow
+
+### 1. Home Page
+![HomePage](https://raw.githubusercontent.com/SuryaThejas-07/Full_Stack_Railways/d206396ac0904526f43f61704c274e55a73ffa97/images/HomePage.png)
+
+### 2. Booking
+![Booking](https://raw.githubusercontent.com/SuryaThejas-07/Full_Stack_Railways/d206396ac0904526f43f61704c274e55a73ffa97/images/Booking.png)
+
+### 3. Train Details
+![Details](https://raw.githubusercontent.com/SuryaThejas-07/Full_Stack_Railways/d206396ac0904526f43f61704c274e55a73ffa97/images/Details.png)
+
+### 4. Seat Selection
+![Seats](https://raw.githubusercontent.com/SuryaThejas-07/Full_Stack_Railways/d206396ac0904526f43f61704c274e55a73ffa97/images/Seats.png)
+
+### 5. Confirmation Step
+![Confirm Step](https://raw.githubusercontent.com/SuryaThejas-07/Full_Stack_Railways/d206396ac0904526f43f61704c274e55a73ffa97/images/confrm_1.png)
+
+### 6. Final Confirmation
+![Confirmation](https://raw.githubusercontent.com/SuryaThejas-07/Full_Stack_Railways/d206396ac0904526f43f61704c274e55a73ffa97/images/Confirmation.png)
+
+### 7. Bookings
+![Bookings](https://raw.githubusercontent.com/SuryaThejas-07/Full_Stack_Railways/d206396ac0904526f43f61704c274e55a73ffa97/images/Bookings.png)
+
+### 8. PDF Ticket
+![PDF Ticket](https://raw.githubusercontent.com/SuryaThejas-07/Full_Stack_Railways/e49de3952fa1d882083c122886d3c318c8a79707/images/Pdf_Ticket.png)
+
+### 9. PNR Status
+![PNR Status](https://raw.githubusercontent.com/SuryaThejas-07/Full_Stack_Railways/e49de3952fa1d882083c122886d3c318c8a79707/images/PNR_status.png)
+
+---
+
+## User Dashboard
+![User](https://raw.githubusercontent.com/SuryaThejas-07/Full_Stack_Railways/d206396ac0904526f43f61704c274e55a73ffa97/images/user.png)
+
+---
+
+## Admin Panel
+
+### Admin Dashboard
+![Admin1](https://raw.githubusercontent.com/SuryaThejas-07/Full_Stack_Railways/d206396ac0904526f43f61704c274e55a73ffa97/images/admin1.png)
+
+### Admin Management
+![Admin2](https://raw.githubusercontent.com/SuryaThejas-07/Full_Stack_Railways/d206396ac0904526f43f61704c274e55a73ffa97/images/admin2.png)
+
+---
 
 ### Key Pages
 
